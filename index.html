@@ -9,34 +9,34 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
-    <h1>CoinDrivers</h1>
-    <p class="about">Алгоритмическая криптоэкосистема на основе торгового бота. Мы — команда из шести трейдеров, которые решили создать собственного бота, показывающего +30–40% прибыли в месяц.</p>
-  </header>
+  <div class="container">
+    <header class="hero">
+      <h1>CoinDrivers</h1>
+      <p>Алгоритмическая криптоэкосистема на основе торгового бота</p>
+    </header>
 
-  <section class="roadmap-header">
-    <h2>Roadmap</h2>
-  </section>
+    <div class="about-box">
+      Мы — команда из шести трейдеров с разным опытом. Вместе мы создали CoinDriver Bot — инструмент, который приносит от +30% до +40% прибыли в месяц.
+    </div>
 
-  <section class="roadmap">
-    <div class="step">1. Создание торгового бота</div>
-    <div class="step">2. Запуск Telegram-канала и лендинга</div>
-    <div class="step">3. Анонс инвестиций</div>
-    <div class="step">4. Прием инвестиций через Telegram-бота</div>
-    <div class="step">5. Запуск сайта с дэшбордом</div>
-    <div class="step">6. Выпуск собственного токена CoinBot</div>
-  </section>
+    <div class="roadmap-label">Roadmap</div>
 
-  <section class="calculator">
-    <h2>Калькулятор прибыли</h2>
-    <input type="number" id="amount" placeholder="Введите сумму инвестиции в $" />
-    <div class="result" id="result-week"></div>
-    <div class="result" id="result-month"></div>
-  </section>
+    <div class="roadmap-steps">
+      <div class="step">1. Создание торгового бота</div>
+      <div class="step">2. Запуск Telegram-канала и лендинга</div>
+      <div class="step">3. Анонс инвестиций</div>
+      <div class="step">4. Инвестиции через Telegram-бота</div>
+      <div class="step">5. Запуск сайта с дэшбордом</div>
+      <div class="step">6. Выпуск собственной монеты</div>
+    </div>
 
-  <footer>
-    &copy; 2025 CoinDrivers. Все права защищены.
-  </footer>
+    <div class="calculator">
+      <h2>Калькулятор прибыли</h2>
+      <input type="number" id="amount" placeholder="Введите сумму в $" />
+      <div class="result" id="result-week"></div>
+      <div class="result" id="result-month"></div>
+    </div>
+  </div>
 
   <script>
     const input = document.getElementById('amount');

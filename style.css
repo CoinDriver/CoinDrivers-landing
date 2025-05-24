@@ -1,97 +1,97 @@
 
 body {
   margin: 0;
-  padding: 0;
   font-family: 'Space Grotesk', sans-serif;
   background: url('background_final.png') no-repeat center center fixed;
   background-size: cover;
   color: #ffffff;
 }
 
+.container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
 .hero {
   text-align: center;
-  padding: 60px 20px 30px;
-  background: rgba(0, 0, 0, 0.6);
+  padding-top: 40px;
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: 40px;
   color: #00ffe7;
-  text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
 }
 
-.about {
+.hero p {
   font-size: 18px;
-  max-width: 800px;
-  margin: 0 auto;
-  color: #dddddd;
+  color: #cccccc;
 }
 
-.roadmap-header {
+.about-box {
+  max-width: 600px;
+  margin: 20px auto;
+  background: rgba(0,0,0,0.6);
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-size: 16px;
   text-align: center;
-  margin-top: 30px;
 }
 
-.roadmap-header h2 {
-  font-size: 26px;
-  color: #ffd700;
+.roadmap-label {
+  text-align: center;
+  margin: 30px 0 10px;
+  font-size: 22px;
+  color: #ffff66;
+  font-weight: bold;
 }
 
-.roadmap {
+.roadmap-steps {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 20px;
-  gap: 15px;
+  gap: 12px;
+  margin: 0 20px;
 }
 
 .step {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 14px 18px;
-  min-width: 220px;
-  text-align: center;
-  font-weight: 500;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  background: rgba(255,255,255,0.1);
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 15px;
   backdrop-filter: blur(3px);
+  min-width: 180px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 .calculator {
-  margin: 30px auto;
-  max-width: 400px;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px;
+  max-width: 300px;
+  background: rgba(0,0,0,0.7);
+  padding: 16px;
   border-radius: 16px;
+  margin: 30px auto;
   text-align: center;
-  box-shadow: 0 0 15px rgba(255,255,255,0.1);
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
 }
 
 .calculator h2 {
-  color: #ff9800;
+  color: #ffcc00;
   margin-bottom: 10px;
 }
 
 input {
   width: 90%;
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 8px;
+  padding: 10px;
+  border-radius: 6px;
   border: none;
-  margin-bottom: 14px;
-  background-color: #1c1f2c;
-  color: white;
+  font-size: 16px;
+  background: #1e1e2f;
+  color: #fff;
 }
 
 .result {
-  font-size: 16px;
-  color: #a8ffdb;
-  margin-bottom: 10px;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
+  margin-top: 10px;
+  color: #aaffcc;
   font-size: 14px;
-  background: rgba(0, 0, 0, 0.85);
-  color: #aaaaaa;
 }
