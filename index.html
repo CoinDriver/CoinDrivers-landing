@@ -2,84 +2,23 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CoinDrivers | Криптоэкосистема</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            color: #ffffff;
-            background: url('https://raw.githubusercontent.com/sashachernyshov/coindrivers-assets/main/robot-bg-coindrivers-monety.jpg') no-repeat center center fixed;
-            background-size: cover;
-        }
-        header {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 60px 20px 40px;
-            text-align: center;
-        }
-        header h1 {
-            font-size: 48px;
-            color: #00ffd5;
-        }
-        header p {
-            font-size: 20px;
-            color: #dddddd;
-        }
-        section {
-            background: rgba(0, 0, 0, 0.75);
-            margin: 30px auto;
-            padding: 30px 20px;
-            max-width: 900px;
-            border-radius: 12px;
-        }
-        h2 {
-            font-size: 26px;
-            color: #ff9800;
-            margin-bottom: 16px;
-        }
-        input {
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            margin-bottom: 16px;
-            border-radius: 8px;
-            border: none;
-            background: #333;
-            color: #fff;
-        }
-        .result {
-            font-size: 16px;
-            margin-top: 8px;
-            line-height: 1.6;
-        }
-        .highlight {
-            color: #00e676;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: rgba(0, 0, 0, 0.7);
-            font-size: 14px;
-            color: #bbbbbb;
-        }
-        @media (max-width: 600px) {
-            header h1 { font-size: 32px; }
-            h2 { font-size: 22px; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<div class="hero">
     <h1>CoinDrivers</h1>
-    <p>Алгоритмическая криптоэкосистема на базе торгового бота</p>
-</header>
+    <p>Алгоритмическая криптоэкосистема на базе торгового бота с результативностью +30–40% в месяц</p>
+</div>
 
 <section>
     <h2>Калькулятор прибыли</h2>
     <p>Введите сумму инвестиции ($):</p>
-    <input type="number" id="amount" placeholder="Например, 1000">
+    <input type="number" id="amount" placeholder="Например, 1000" />
     <div class="result" id="result-week"></div>
     <div class="result" id="result-month"></div>
 </section>
@@ -101,8 +40,8 @@
             return;
         }
 
-        const weeklyProfit = val * 0.085; // средний 8.5% в неделю
-        const monthlyProfit = val * 0.35; // средний 35% в месяц
+        const weeklyProfit = val * 0.085;
+        const monthlyProfit = val * 0.35;
 
         const teamWeekly = weeklyProfit * 0.2;
         const teamMonthly = monthlyProfit * 0.2;
