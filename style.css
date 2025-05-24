@@ -2,87 +2,119 @@
 body {
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
   color: #ffffff;
-  padding: 0;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .wrapper {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.hero {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.hero h1 {
-  font-size: 48px;
-  color: #00ffe7;
-}
-
-.hero p {
-  font-size: 20px;
-  color: #ccc;
-}
-
-.roadmap h2 {
-  text-align: center;
-  color: #ffd700;
-}
-
-.roadmap ul {
-  list-style: none;
-  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 20px;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 30px;
+  box-sizing: border-box;
 }
 
-.roadmap li {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 12px 20px;
-  border-radius: 10px;
+.intro {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  max-width: 400px;
+}
+
+.intro h1 {
+  font-size: 36px;
+  color: #00ffe7;
+  margin-bottom: 10px;
+}
+
+.intro p {
   font-size: 16px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  line-height: 1.5;
+  color: #e0e0e0;
 }
 
-.calculator {
-  margin-top: 40px;
-  background-color: rgba(0,0,0,0.5);
-  padding: 20px;
-  border-radius: 12px;
-  text-align: center;
+.telegram-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.telegram-btn a {
+  background-color: #ffcc00;
+  color: #000;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-weight: bold;
+  border-radius: 8px;
   box-shadow: 0 0 10px rgba(255,255,255,0.2);
 }
 
-.calculator input {
-  width: 80%;
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: none;
-  margin-bottom: 20px;
-  background-color: #1e1e2e;
-  color: #fff;
+.roadmap-section {
+  margin-bottom: 100px;
 }
 
-.calculator h2 {
+.roadmap-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffd700;
+}
+
+.roadmap-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  padding: 14px 18px;
+  border-radius: 12px;
+  text-align: center;
+  width: 180px;
+  font-size: 15px;
+  position: relative;
+}
+
+.card span {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.calculator-box {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background-color: rgba(0,0,0,0.5);
+  padding: 20px;
+  border-radius: 16px;
+  width: 280px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.calculator-box h3 {
   color: #ffcc00;
+  text-align: center;
+}
+
+.calculator-box input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 10px;
+  background: #1e1e2f;
+  color: #fff;
+  font-size: 16px;
 }
 
 #result {
-  font-size: 16px;
-  color: #aaffcc;
-}
-
-footer {
-  text-align: center;
-  padding: 20px;
   font-size: 14px;
-  margin-top: 40px;
-  background: rgba(0, 0, 0, 0.3);
+  margin-top: 15px;
+  color: #aaffcc;
 }

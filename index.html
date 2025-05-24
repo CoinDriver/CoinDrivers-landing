@@ -3,69 +3,67 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>CoinDrivers | Roadmap</title>
+  <title>CoinDrivers | Криптоэкосистема</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="wrapper">
-    <header class="hero">
+    <div class="intro">
       <h1>CoinDrivers</h1>
-      <p>Алгоритмическая криптоэкосистема с живым торговым ботом</p>
-    </header>
+      <p>
+        Мы — команда трейдеров, прошедших путь тестов, ошибок и боли. Мы объединились, чтобы создать <strong>бота, которому можно доверять</strong>.<br/>
+        Этот бот стабильно приносит <strong>+30–40% прибыли в месяц</strong> и управляется нами — вручную и с умом.
+      </p>
+    </div>
 
-    <section class="roadmap">
+    <div class="telegram-btn">
+      <a href="https://t.me/yourchannel" target="_blank">Наш Telegram-канал</a>
+    </div>
+
+    <div class="roadmap-section">
       <h2>Roadmap</h2>
-      <ul>
-        <li>1. Создание торгового бота</li>
-        <li>2. Запуск Telegram-канала</li>
-        <li>3. Анонс инвестиций и квалификаций</li>
-        <li>4. Прием инвестиций через Telegram-бота</li>
-        <li>5. Запуск сайта с дашбордом и статистикой</li>
-        <li>6. Выпуск собственной монеты</li>
-      </ul>
-    </section>
+      <div class="roadmap-grid">
+        <div class="card">Создание торгового бота<br/><span>2024</span></div>
+        <div class="card">Запуск Telegram-канала<br/><span>2024</span></div>
+        <div class="card">Анонс инвестиций<br/><span>2024</span></div>
+        <div class="card">Запуск Telegram-бота для инвестиций<br/><span>2024</span></div>
+        <div class="card">Запуск сайта и дашборда<br/><span>2024</span></div>
+        <div class="card">Выпуск собственной монеты<br/><span>2025</span></div>
+      </div>
+    </div>
 
-    <section class="calculator">
-      <h2>Калькулятор прибыли</h2>
-      <input type="number" id="amount" placeholder="Введите сумму ($)" />
+    <div class="calculator-box">
+      <h3>Калькулятор прибыли</h3>
+      <input type="number" id="amount" placeholder="Сумма инвестиции ($)" />
       <div id="result"></div>
-    </section>
-
-    <footer>
-      © 2025 CoinDrivers. Все права защищены.
-    </footer>
-
-    <script>
-      const input = document.getElementById('amount');
-      const result = document.getElementById('result');
-
-      input.addEventListener('input', () => {
-        const val = parseFloat(input.value);
-        if (isNaN(val) || val <= 0) {
-          result.innerHTML = '';
-          return;
-        }
-
-        const weekMin = val * 0.07;
-        const weekMax = val * 0.10;
-        const monthMin = val * 0.30;
-        const monthMax = val * 0.40;
-
-        const teamWeekMin = weekMin * 0.2;
-        const teamWeekMax = weekMax * 0.2;
-        const teamMonthMin = monthMin * 0.2;
-        const teamMonthMax = monthMax * 0.2;
-
-        result.innerHTML = `
-          <div><strong>За неделю:</strong> $${weekMin.toFixed(2)} – $${weekMax.toFixed(2)}<br/>
-            Тебе: $${(weekMin * 0.8).toFixed(2)} – $${(weekMax * 0.8).toFixed(2)}</div><br/>
-          <div><strong>За месяц:</strong> $${monthMin.toFixed(2)} – $${monthMax.toFixed(2)}<br/>
-            Тебе: $${(monthMin * 0.8).toFixed(2)} – $${(monthMax * 0.8).toFixed(2)}</div>
-        `;
-      });
-    </script>
+    </div>
   </div>
+
+  <script>
+    const input = document.getElementById('amount');
+    const result = document.getElementById('result');
+
+    input.addEventListener('input', () => {
+      const val = parseFloat(input.value);
+      if (isNaN(val) || val <= 0) {
+        result.innerHTML = '';
+        return;
+      }
+
+      const weekMin = val * 0.07;
+      const weekMax = val * 0.10;
+      const monthMin = val * 0.30;
+      const monthMax = val * 0.40;
+
+      result.innerHTML = `
+        <div><strong>За неделю:</strong> $${weekMin.toFixed(2)} – $${weekMax.toFixed(2)}<br/>
+          Тебе: $${(weekMin * 0.8).toFixed(2)} – $${(weekMax * 0.8).toFixed(2)}</div><br/>
+        <div><strong>За месяц:</strong> $${monthMin.toFixed(2)} – $${monthMax.toFixed(2)}<br/>
+          Тебе: $${(monthMin * 0.8).toFixed(2)} – $${(monthMax * 0.8).toFixed(2)}</div>
+      `;
+    });
+  </script>
 </body>
 </html>
