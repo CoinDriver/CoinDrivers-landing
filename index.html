@@ -2,68 +2,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CoinDrivers | Криптоэкосистема</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>CoinDrivers Landing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="hero">
-    <h1>CoinDrivers</h1>
-    <p>Алгоритмическая криптоэкосистема на базе торгового бота с результативностью +30–40% в месяц</p>
-</div>
-
-<section>
-    <h2>Калькулятор прибыли</h2>
-    <p>Введите сумму инвестиции ($):</p>
-    <input type="number" id="amount" placeholder="Например, 1000" />
-    <div class="result" id="result-week"></div>
-    <div class="result" id="result-month"></div>
-</section>
-
-<footer>
-    &copy; 2025 CoinDrivers. Все права защищены.
-</footer>
-
-<script>
-    const input = document.getElementById('amount');
-    const week = document.getElementById('result-week');
-    const month = document.getElementById('result-month');
-
-    input.addEventListener('input', () => {
-        const val = parseFloat(input.value);
-        if (isNaN(val) || val <= 0) {
-            week.textContent = '';
-            month.textContent = '';
-            return;
-        }
-
-        const weeklyProfit = val * 0.085;
-        const monthlyProfit = val * 0.35;
-
-        const teamWeekly = weeklyProfit * 0.2;
-        const teamMonthly = monthlyProfit * 0.2;
-
-        const userWeekly = weeklyProfit - teamWeekly;
-        const userMonthly = monthlyProfit - teamMonthly;
-
-        week.innerHTML = `
-            <strong>За неделю:</strong><br>
-            Общая прибыль: <span class="highlight">+8.5%</span> = $${weeklyProfit.toFixed(2)}<br>
-            В команду: <span class="highlight">20%</span> = $${teamWeekly.toFixed(2)}<br>
-            Тебе чистыми: <span class="highlight">80%</span> = $${userWeekly.toFixed(2)}
-        `;
-
-        month.innerHTML = `
-            <strong>За месяц:</strong><br>
-            Общая прибыль: <span class="highlight">+35%</span> = $${monthlyProfit.toFixed(2)}<br>
-            В команду: <span class="highlight">20%</span> = $${teamMonthly.toFixed(2)}<br>
-            Тебе чистыми: <span class="highlight">80%</span> = $${userMonthly.toFixed(2)}
-        `;
-    });
-</script>
-
+    <!-- Весь контент находится в background.png, текст редактируемый вручную позже -->
 </body>
 </html>
