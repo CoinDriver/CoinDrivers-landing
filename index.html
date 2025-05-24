@@ -10,21 +10,22 @@
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
             padding: 0;
-            background: #0e0e0e;
+            background-color: #0f0f0f;
             color: #ffffff;
         }
         header {
             padding: 60px 20px;
             text-align: center;
-            background: linear-gradient(90deg, #1f1f1f, #2b2b2b);
+            background: linear-gradient(90deg, #0f2c5d, #054646);
         }
         header h1 {
             font-size: 48px;
             margin-bottom: 10px;
+            color: #ff6f00;
         }
         header p {
             font-size: 20px;
-            color: #bbbbbb;
+            color: #a8dadc;
         }
         section {
             padding: 40px 20px;
@@ -32,17 +33,31 @@
             margin: 0 auto;
         }
         h2 {
-            color: #66ffcc;
+            color: #00f5d4;
             margin-bottom: 10px;
         }
         .roadmap {
             margin-top: 20px;
-            background: #1b1b1b;
+            background: #1e1e1e;
             padding: 20px;
             border-radius: 8px;
         }
         .roadmap-item {
+            background-color: #252525;
+            border-left: 5px solid #ff6f00;
+            padding: 10px 15px;
             margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .telegram-button {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #0088cc;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
         }
         footer {
             text-align: center;
@@ -51,6 +66,15 @@
             background: #111111;
             color: #666666;
         }
+        .robot-image {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .robot-image img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 12px;
+        }
     </style>
 </head>
 <body>
@@ -58,19 +82,29 @@
         <h1>CoinDrivers</h1>
         <p>Алгоритмическая криптоэкосистема с человеческим управлением</p>
     </header>
+
+    <section class="robot-image">
+        <img src="https://raw.githubusercontent.com/sashachernyshov/coindrivers-assets/main/robot.png" alt="CoinDriver Robot">
+    </section>
+
     <section>
         <h2>О нас</h2>
-        <p>Мы — команда трейдеров и разработчиков, создавших собственную торговую систему на PineScript, интегрированную через WonderTrading. Система показывает стабильный рост +30–40% в месяц и полностью управляется вручную, с акцентом на риск-менеджмент и дисциплину.</p>
+        <p>CoinDrivers — это алгоритмическая экосистема, построенная на стабильной стратегии в TradingView через PineScript, подкреплённая живым контролем и опытом команды. Бот показывает результат +30–40% в месяц на фьючерсном рынке.</p>
     </section>
+
     <section>
-        <h2>Роудмап</h2>
+        <h2>Roadmap</h2>
         <div class="roadmap">
-            <div class="roadmap-item"><strong>Q2 2025:</strong> запуск MVP, торговля на личных счетах</div>
-            <div class="roadmap-item"><strong>Q3 2025:</strong> первая волна инвестиций и подключение участников</div>
-            <div class="roadmap-item"><strong>Q4 2025:</strong> запуск дашборда с мониторингом в реальном времени</div>
-            <div class="roadmap-item"><strong>2026:</strong> расширение в мультибот-платформу и API-доступ</div>
+            <div class="roadmap-item"><strong>Q4 2024:</strong> Завершение тестирования и запуск в работу CoinDriver Bot</div>
+            <div class="roadmap-item"><strong>Q2 2025:</strong> Открытие квалификации на первую волну инвесторов</div>
+            <div class="roadmap-item"><strong>Q3 2025:</strong> Запуск Telegram-бота для приёма инвестиций</div>
+            <div class="roadmap-item"><strong>Q4 2025:</strong> Запуск полноценного сайта с дашбордами</div>
+            <div class="roadmap-item"><strong>Q1 2026:</strong> Запуск собственной монеты CoinBot</div>
         </div>
+
+        <a class="telegram-button" href="https://t.me/yourchannel" target="_blank">Подписаться на Telegram</a>
     </section>
+
     <footer>
         &copy; 2025 CoinDrivers. Все права защищены.
     </footer>
