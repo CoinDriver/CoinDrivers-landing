@@ -4,92 +4,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoinDrivers | Алгоритмическая экосистема</title>
+    <title>CoinDrivers | Алгоритмическая криптоэкосистема</title>
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #0f0f0f;
+            background: #0d0d0d url('https://raw.githubusercontent.com/sashachernyshov/coindrivers-assets/main/robot-background-final.jpg') no-repeat center center fixed;
+            background-size: cover;
             color: #ffffff;
         }
         header {
             padding: 60px 20px;
             text-align: center;
-            background: linear-gradient(90deg, #0f2c5d, #054646);
+            background: rgba(0, 0, 0, 0.75);
         }
         header h1 {
-            font-size: 48px;
+            font-size: 40px;
             margin-bottom: 10px;
-            color: #ff6f00;
+            color: #00f5d4;
         }
         header p {
-            font-size: 20px;
-            color: #a8dadc;
+            font-size: 18px;
+            color: #dddddd;
         }
         section {
-            padding: 40px 20px;
+            padding: 30px 20px;
             max-width: 960px;
-            margin: 0 auto;
+            margin: 0 auto 30px;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 12px;
         }
         h2 {
-            color: #00f5d4;
-            margin-bottom: 10px;
-        }
-        .roadmap {
-            margin-top: 20px;
-            background: #1e1e1e;
-            padding: 20px;
-            border-radius: 8px;
+            color: #ff6f00;
+            margin-bottom: 15px;
+            font-size: 24px;
         }
         .roadmap-item {
-            background-color: #252525;
+            background-color: #1e1e1ecc;
             border-left: 5px solid #ff6f00;
-            padding: 10px 15px;
+            padding: 14px 20px;
             margin-bottom: 20px;
-            border-radius: 4px;
+            border-radius: 6px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-in-out;
+        }
+        .roadmap-item.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         .telegram-button {
             display: inline-block;
             margin-top: 20px;
             background-color: #0088cc;
             color: white;
-            padding: 12px 20px;
+            padding: 14px 22px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 16px;
+        }
+        .calc-block input {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+            border: none;
+            background: #333;
+            color: #fff;
+        }
+        .calc-result {
+            margin-top: 12px;
+            font-size: 16px;
+            color: #a0e9ff;
         }
         footer {
             text-align: center;
             padding: 20px;
             font-size: 14px;
-            background: #111111;
-            color: #666666;
+            background: rgba(0, 0, 0, 0.85);
+            color: #888888;
         }
-        .robot-image {
-            text-align: center;
-            margin-top: 40px;
-        }
-        .robot-image img {
-            max-width: 300px;
-            height: auto;
-            border-radius: 12px;
+        @media (max-width: 600px) {
+            header h1 { font-size: 32px; }
+            h2 { font-size: 20px; }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>CoinDrivers</h1>
-        <p>Алгоритмическая криптоэкосистема с человеческим управлением</p>
+        <p>Алгоритмическая криптоэкосистема на основе криптоторгующего бота</p>
     </header>
-
-    <section class="robot-image">
-        <img src="https://raw.githubusercontent.com/sashachernyshov/coindrivers-assets/main/robot.png" alt="CoinDriver Robot">
-    </section>
 
     <section>
         <h2>О нас</h2>
-        <p>CoinDrivers — это алгоритмическая экосистема, построенная на стабильной стратегии в TradingView через PineScript, подкреплённая живым контролем и опытом команды. Бот показывает результат +30–40% в месяц на фьючерсном рынке.</p>
+        <p>Мы — команда из шести трейдеров, каждый из которых прошёл свой путь: от проб-компаний до внутри-дневного скальпинга, от слива депозитов до фанатичного анализа. Спустя годы тестов и экспериментов мы пришли к главному — человек устаёт, ошибается, теряет контроль.</p>
+        <p>Так родилась идея создать <strong>бота</strong>, который объединяет наш опыт, дисциплину и холодный расчёт. Бота, которому можно доверить деньги.</p>
+        <p><strong>Результат:</strong> +30–40% в месяц на фьючерсном рынке. Без эмоций. Только логика.</p>
+    </section>
+
+    <section>
+        <h2>Доходность</h2>
+        <div class="calc-block">
+            <input type="number" id="investment" placeholder="Введите сумму инвестиции в $">
+            <div class="calc-result" id="weekly"></div>
+            <div class="calc-result" id="monthly"></div>
+        </div>
     </section>
 
     <section>
@@ -101,12 +124,44 @@
             <div class="roadmap-item"><strong>Q4 2025:</strong> Запуск полноценного сайта с дашбордами</div>
             <div class="roadmap-item"><strong>Q1 2026:</strong> Запуск собственной монеты CoinBot</div>
         </div>
-
-        <a class="telegram-button" href="https://t.me/yourchannel" target="_blank">Подписаться на Telegram</a>
+        <a class="telegram-button" href="https://t.me/yourchannel" target="_blank">Наш Telegram-канал</a>
     </section>
 
     <footer>
         &copy; 2025 CoinDrivers. Все права защищены.
     </footer>
+
+    <script>
+        // Roadmap animation
+        const items = document.querySelectorAll('.roadmap-item');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        items.forEach(item => observer.observe(item));
+
+        // Калькулятор дохода
+        const investmentInput = document.getElementById('investment');
+        const weeklyResult = document.getElementById('weekly');
+        const monthlyResult = document.getElementById('monthly');
+
+        investmentInput.addEventListener('input', () => {
+            const amount = parseFloat(investmentInput.value);
+            if (!isNaN(amount) && amount > 0) {
+                const monthlyGain = amount * 0.35;
+                const weeklyGain = monthlyGain / 4;
+                const teamCutMonthly = monthlyGain * 0.2;
+                const teamCutWeekly = weeklyGain * 0.2;
+                weeklyResult.innerHTML = `Прибыль за неделю: <strong>$${(weeklyGain - teamCutWeekly).toFixed(2)}</strong> (в команду $${teamCutWeekly.toFixed(2)})`;
+                monthlyResult.innerHTML = `Прибыль за месяц: <strong>$${(monthlyGain - teamCutMonthly).toFixed(2)}</strong> (в команду $${teamCutMonthly.toFixed(2)})`;
+            } else {
+                weeklyResult.innerHTML = '';
+                monthlyResult.innerHTML = '';
+            }
+        });
+    </script>
 </body>
 </html>
