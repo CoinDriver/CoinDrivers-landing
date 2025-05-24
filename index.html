@@ -4,164 +4,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CoinDrivers | Алгоритмическая криптоэкосистема</title>
+    <title>CoinDrivers | Криптоэкосистема</title>
     <style>
         body {
-            font-family: 'Segoe UI', sans-serif;
             margin: 0;
-            padding: 0;
-            background: #0d0d0d url('https://raw.githubusercontent.com/sashachernyshov/coindrivers-assets/main/robot-background-final.jpg') no-repeat center center fixed;
-            background-size: cover;
+            font-family: 'Segoe UI', sans-serif;
             color: #ffffff;
+            background: url('https://raw.githubusercontent.com/sashachernyshov/coindrivers-assets/main/robot-bg-coindrivers-monety.jpg') no-repeat center center fixed;
+            background-size: cover;
         }
         header {
-            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 60px 20px 40px;
             text-align: center;
-            background: rgba(0, 0, 0, 0.75);
         }
         header h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
-            color: #00f5d4;
+            font-size: 48px;
+            color: #00ffd5;
         }
         header p {
-            font-size: 18px;
+            font-size: 20px;
             color: #dddddd;
         }
         section {
-            padding: 30px 20px;
-            max-width: 960px;
-            margin: 0 auto 30px;
             background: rgba(0, 0, 0, 0.75);
+            margin: 30px auto;
+            padding: 30px 20px;
+            max-width: 900px;
             border-radius: 12px;
         }
         h2 {
-            color: #ff6f00;
-            margin-bottom: 15px;
-            font-size: 24px;
+            font-size: 26px;
+            color: #ff9800;
+            margin-bottom: 16px;
         }
-        .roadmap-item {
-            background-color: #1e1e1ecc;
-            border-left: 5px solid #ff6f00;
-            padding: 14px 20px;
-            margin-bottom: 20px;
-            border-radius: 6px;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-in-out;
-        }
-        .roadmap-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .telegram-button {
-            display: inline-block;
-            margin-top: 20px;
-            background-color: #0088cc;
-            color: white;
-            padding: 14px 22px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
-        }
-        .calc-block input {
+        input {
             width: 100%;
             padding: 12px;
             font-size: 16px;
-            margin-bottom: 12px;
-            border-radius: 6px;
+            margin-bottom: 16px;
+            border-radius: 8px;
             border: none;
             background: #333;
             color: #fff;
         }
-        .calc-result {
-            margin-top: 12px;
+        .result {
             font-size: 16px;
-            color: #a0e9ff;
+            margin-top: 8px;
+            line-height: 1.6;
+        }
+        .highlight {
+            color: #00e676;
         }
         footer {
             text-align: center;
             padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
             font-size: 14px;
-            background: rgba(0, 0, 0, 0.85);
-            color: #888888;
+            color: #bbbbbb;
         }
         @media (max-width: 600px) {
             header h1 { font-size: 32px; }
-            h2 { font-size: 20px; }
+            h2 { font-size: 22px; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>CoinDrivers</h1>
-        <p>Алгоритмическая криптоэкосистема на основе криптоторгующего бота</p>
-    </header>
 
-    <section>
-        <h2>О нас</h2>
-        <p>Мы — команда из шести трейдеров, каждый из которых прошёл свой путь: от проб-компаний до внутри-дневного скальпинга, от слива депозитов до фанатичного анализа. Спустя годы тестов и экспериментов мы пришли к главному — человек устаёт, ошибается, теряет контроль.</p>
-        <p>Так родилась идея создать <strong>бота</strong>, который объединяет наш опыт, дисциплину и холодный расчёт. Бота, которому можно доверить деньги.</p>
-        <p><strong>Результат:</strong> +30–40% в месяц на фьючерсном рынке. Без эмоций. Только логика.</p>
-    </section>
+<header>
+    <h1>CoinDrivers</h1>
+    <p>Алгоритмическая криптоэкосистема на базе торгового бота</p>
+</header>
 
-    <section>
-        <h2>Доходность</h2>
-        <div class="calc-block">
-            <input type="number" id="investment" placeholder="Введите сумму инвестиции в $">
-            <div class="calc-result" id="weekly"></div>
-            <div class="calc-result" id="monthly"></div>
-        </div>
-    </section>
+<section>
+    <h2>Калькулятор прибыли</h2>
+    <p>Введите сумму инвестиции ($):</p>
+    <input type="number" id="amount" placeholder="Например, 1000">
+    <div class="result" id="result-week"></div>
+    <div class="result" id="result-month"></div>
+</section>
 
-    <section>
-        <h2>Roadmap</h2>
-        <div class="roadmap">
-            <div class="roadmap-item"><strong>Q4 2024:</strong> Завершение тестирования и запуск в работу CoinDriver Bot</div>
-            <div class="roadmap-item"><strong>Q2 2025:</strong> Открытие квалификации на первую волну инвесторов</div>
-            <div class="roadmap-item"><strong>Q3 2025:</strong> Запуск Telegram-бота для приёма инвестиций</div>
-            <div class="roadmap-item"><strong>Q4 2025:</strong> Запуск полноценного сайта с дашбордами</div>
-            <div class="roadmap-item"><strong>Q1 2026:</strong> Запуск собственной монеты CoinBot</div>
-        </div>
-        <a class="telegram-button" href="https://t.me/yourchannel" target="_blank">Наш Telegram-канал</a>
-    </section>
+<footer>
+    &copy; 2025 CoinDrivers. Все права защищены.
+</footer>
 
-    <footer>
-        &copy; 2025 CoinDrivers. Все права защищены.
-    </footer>
+<script>
+    const input = document.getElementById('amount');
+    const week = document.getElementById('result-week');
+    const month = document.getElementById('result-month');
 
-    <script>
-        // Roadmap animation
-        const items = document.querySelectorAll('.roadmap-item');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        items.forEach(item => observer.observe(item));
+    input.addEventListener('input', () => {
+        const val = parseFloat(input.value);
+        if (isNaN(val) || val <= 0) {
+            week.textContent = '';
+            month.textContent = '';
+            return;
+        }
 
-        // Калькулятор дохода
-        const investmentInput = document.getElementById('investment');
-        const weeklyResult = document.getElementById('weekly');
-        const monthlyResult = document.getElementById('monthly');
+        const weeklyProfit = val * 0.085; // средний 8.5% в неделю
+        const monthlyProfit = val * 0.35; // средний 35% в месяц
 
-        investmentInput.addEventListener('input', () => {
-            const amount = parseFloat(investmentInput.value);
-            if (!isNaN(amount) && amount > 0) {
-                const monthlyGain = amount * 0.35;
-                const weeklyGain = monthlyGain / 4;
-                const teamCutMonthly = monthlyGain * 0.2;
-                const teamCutWeekly = weeklyGain * 0.2;
-                weeklyResult.innerHTML = `Прибыль за неделю: <strong>$${(weeklyGain - teamCutWeekly).toFixed(2)}</strong> (в команду $${teamCutWeekly.toFixed(2)})`;
-                monthlyResult.innerHTML = `Прибыль за месяц: <strong>$${(monthlyGain - teamCutMonthly).toFixed(2)}</strong> (в команду $${teamCutMonthly.toFixed(2)})`;
-            } else {
-                weeklyResult.innerHTML = '';
-                monthlyResult.innerHTML = '';
-            }
-        });
-    </script>
+        const teamWeekly = weeklyProfit * 0.2;
+        const teamMonthly = monthlyProfit * 0.2;
+
+        const userWeekly = weeklyProfit - teamWeekly;
+        const userMonthly = monthlyProfit - teamMonthly;
+
+        week.innerHTML = `
+            <strong>За неделю:</strong><br>
+            Общая прибыль: <span class="highlight">+8.5%</span> = $${weeklyProfit.toFixed(2)}<br>
+            В команду: <span class="highlight">20%</span> = $${teamWeekly.toFixed(2)}<br>
+            Тебе чистыми: <span class="highlight">80%</span> = $${userWeekly.toFixed(2)}
+        `;
+
+        month.innerHTML = `
+            <strong>За месяц:</strong><br>
+            Общая прибыль: <span class="highlight">+35%</span> = $${monthlyProfit.toFixed(2)}<br>
+            В команду: <span class="highlight">20%</span> = $${teamMonthly.toFixed(2)}<br>
+            Тебе чистыми: <span class="highlight">80%</span> = $${userMonthly.toFixed(2)}
+        `;
+    });
+</script>
+
 </body>
 </html>
