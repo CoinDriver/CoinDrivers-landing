@@ -1,8 +1,88 @@
 
 body {
-    margin: 0;
-    padding: 0;
-    background: url('background.png') no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  background: #0a0f1c url('background.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #ffffff;
+}
+
+.hero {
+  text-align: center;
+  padding: 80px 20px 40px;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero h1 {
+  font-size: 48px;
+  color: #00ffd5;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 20px;
+  color: #cccccc;
+}
+
+section {
+  background: rgba(255,255,255,0.05);
+  margin: 30px auto;
+  padding: 20px;
+  max-width: 900px;
+  border-radius: 14px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+h2 {
+  font-size: 24px;
+  color: #ff9800;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  background: #1c1f2c;
+  color: #fff;
+  border: none;
+  margin-bottom: 10px;
+}
+
+.result {
+  font-size: 16px;
+  margin-top: 10px;
+  color: #a8ffdb;
+}
+
+.roadmap ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.roadmap li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.cta {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.telegram-button {
+  background-color: #0088cc;
+  color: white;
+  padding: 14px 24px;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.8);
+  font-size: 14px;
+  color: #aaaaaa;
 }

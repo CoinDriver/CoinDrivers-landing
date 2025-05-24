@@ -2,12 +2,76 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>CoinDrivers Landing</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <title>CoinDrivers | Криптоэкосистема</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <!-- Весь контент находится в background.png, текст редактируемый вручную позже -->
+  <div class="hero">
+    <h1>CoinDrivers</h1>
+    <p>Алгоритмическая криптоэкосистема на основе торгового бота</p>
+  </div>
+
+  <section class="about">
+    <h2>О нас</h2>
+    <p>Мы — команда из шести трейдеров с разным опытом. Наш путь прошёл через проб-компании, сливы, поиск грааля. В итоге мы поняли: стабильность — это дисциплина и автоматизация. Так родился CoinDriver Bot, приносящий +30–40% в месяц на фьючерсах.</p>
+  </section>
+
+  <section class="calc">
+    <h2>Калькулятор прибыли</h2>
+    <input type="number" id="amount" placeholder="Введите сумму инвестиции в $" />
+    <div class="result" id="result-week"></div>
+    <div class="result" id="result-month"></div>
+  </section>
+
+  <section class="roadmap">
+    <h2>Roadmap</h2>
+    <ul>
+      <li><strong>✓</strong> Тестирование и запуск CoinDriver Bot</li>
+      <li><strong>✓</strong> Открытие квалификации для инвесторов</li>
+      <li><strong>⌛</strong> Запуск Telegram-бота для инвестиций</li>
+      <li><strong>▶</strong> Запуск сайта с дашбордом</li>
+      <li><strong>🚀</strong> Выпуск токена CoinBot в начале 2026</li>
+    </ul>
+  </section>
+
+  <div class="cta">
+    <a href="https://t.me/yourchannel" target="_blank" class="telegram-button">Наш Telegram-канал</a>
+  </div>
+
+  <footer>
+    &copy; 2025 CoinDrivers. Все права защищены.
+  </footer>
+
+  <script>
+    const input = document.getElementById('amount');
+    const week = document.getElementById('result-week');
+    const month = document.getElementById('result-month');
+
+    input.addEventListener('input', () => {
+      const val = parseFloat(input.value);
+      if (isNaN(val) || val <= 0) {
+        week.textContent = '';
+        month.textContent = '';
+        return;
+      }
+
+      const weeklyProfit = val * 0.085;
+      const monthlyProfit = val * 0.35;
+
+      const teamWeekly = weeklyProfit * 0.2;
+      const teamMonthly = monthlyProfit * 0.2;
+
+      const userWeekly = weeklyProfit - teamWeekly;
+      const userMonthly = monthlyProfit - teamMonthly;
+
+      week.innerHTML = `<strong>За неделю:</strong> +8.5% = $${weeklyProfit.toFixed(2)}<br>
+        В команду: $${teamWeekly.toFixed(2)} | Тебе: $${userWeekly.toFixed(2)}`;
+      month.innerHTML = `<strong>За месяц:</strong> +35% = $${monthlyProfit.toFixed(2)}<br>
+        В команду: $${teamMonthly.toFixed(2)} | Тебе: $${userMonthly.toFixed(2)}`;
+    });
+  </script>
 </body>
 </html>
