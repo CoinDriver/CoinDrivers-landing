@@ -2,96 +2,87 @@
 body {
   margin: 0;
   font-family: 'Space Grotesk', sans-serif;
-  background: url('background_final.png') no-repeat center center fixed;
-  background-size: cover;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   color: #ffffff;
+  padding: 0;
 }
 
-.container {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .hero {
   text-align: center;
-  padding-top: 40px;
+  margin-bottom: 40px;
 }
 
 .hero h1 {
-  font-size: 40px;
+  font-size: 48px;
   color: #00ffe7;
 }
 
 .hero p {
-  font-size: 18px;
-  color: #cccccc;
+  font-size: 20px;
+  color: #ccc;
 }
 
-.about-box {
-  max-width: 600px;
-  margin: 20px auto;
-  background: rgba(0,0,0,0.6);
-  padding: 12px 18px;
-  border-radius: 12px;
-  font-size: 16px;
+.roadmap h2 {
   text-align: center;
+  color: #ffd700;
 }
 
-.roadmap-label {
-  text-align: center;
-  margin: 30px 0 10px;
-  font-size: 22px;
-  color: #ffff66;
-  font-weight: bold;
-}
-
-.roadmap-steps {
+.roadmap ul {
+  list-style: none;
+  padding: 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   gap: 12px;
-  margin: 0 20px;
+  margin-top: 20px;
 }
 
-.step {
-  background: rgba(255,255,255,0.1);
-  padding: 10px 16px;
+.roadmap li {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 12px 20px;
   border-radius: 10px;
-  font-size: 15px;
-  backdrop-filter: blur(3px);
-  min-width: 180px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  font-size: 16px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .calculator {
-  max-width: 300px;
-  background: rgba(0,0,0,0.7);
-  padding: 16px;
-  border-radius: 16px;
-  margin: 30px auto;
+  margin-top: 40px;
+  background-color: rgba(0,0,0,0.5);
+  padding: 20px;
+  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+  box-shadow: 0 0 10px rgba(255,255,255,0.2);
+}
+
+.calculator input {
+  width: 80%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  margin-bottom: 20px;
+  background-color: #1e1e2e;
+  color: #fff;
 }
 
 .calculator h2 {
   color: #ffcc00;
-  margin-bottom: 10px;
 }
 
-input {
-  width: 90%;
-  padding: 10px;
-  border-radius: 6px;
-  border: none;
+#result {
   font-size: 16px;
-  background: #1e1e2f;
-  color: #fff;
+  color: #aaffcc;
 }
 
-.result {
-  margin-top: 10px;
-  color: #aaffcc;
+footer {
+  text-align: center;
+  padding: 20px;
   font-size: 14px;
+  margin-top: 40px;
+  background: rgba(0, 0, 0, 0.3);
 }

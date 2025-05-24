@@ -3,68 +3,69 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <title>CoinDrivers | Криптоэкосистема</title>
+  <title>CoinDrivers | Roadmap</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+  <div class="wrapper">
     <header class="hero">
       <h1>CoinDrivers</h1>
-      <p>Алгоритмическая криптоэкосистема на основе торгового бота</p>
+      <p>Алгоритмическая криптоэкосистема с живым торговым ботом</p>
     </header>
 
-    <div class="about-box">
-      Мы — команда из шести трейдеров с разным опытом. Вместе мы создали CoinDriver Bot — инструмент, который приносит от +30% до +40% прибыли в месяц.
-    </div>
+    <section class="roadmap">
+      <h2>Roadmap</h2>
+      <ul>
+        <li>1. Создание торгового бота</li>
+        <li>2. Запуск Telegram-канала</li>
+        <li>3. Анонс инвестиций и квалификаций</li>
+        <li>4. Прием инвестиций через Telegram-бота</li>
+        <li>5. Запуск сайта с дашбордом и статистикой</li>
+        <li>6. Выпуск собственной монеты</li>
+      </ul>
+    </section>
 
-    <div class="roadmap-label">Roadmap</div>
-
-    <div class="roadmap-steps">
-      <div class="step">1. Создание торгового бота</div>
-      <div class="step">2. Запуск Telegram-канала и лендинга</div>
-      <div class="step">3. Анонс инвестиций</div>
-      <div class="step">4. Инвестиции через Telegram-бота</div>
-      <div class="step">5. Запуск сайта с дэшбордом</div>
-      <div class="step">6. Выпуск собственной монеты</div>
-    </div>
-
-    <div class="calculator">
+    <section class="calculator">
       <h2>Калькулятор прибыли</h2>
-      <input type="number" id="amount" placeholder="Введите сумму в $" />
-      <div class="result" id="result-week"></div>
-      <div class="result" id="result-month"></div>
-    </div>
+      <input type="number" id="amount" placeholder="Введите сумму ($)" />
+      <div id="result"></div>
+    </section>
+
+    <footer>
+      © 2025 CoinDrivers. Все права защищены.
+    </footer>
+
+    <script>
+      const input = document.getElementById('amount');
+      const result = document.getElementById('result');
+
+      input.addEventListener('input', () => {
+        const val = parseFloat(input.value);
+        if (isNaN(val) || val <= 0) {
+          result.innerHTML = '';
+          return;
+        }
+
+        const weekMin = val * 0.07;
+        const weekMax = val * 0.10;
+        const monthMin = val * 0.30;
+        const monthMax = val * 0.40;
+
+        const teamWeekMin = weekMin * 0.2;
+        const teamWeekMax = weekMax * 0.2;
+        const teamMonthMin = monthMin * 0.2;
+        const teamMonthMax = monthMax * 0.2;
+
+        result.innerHTML = `
+          <div><strong>За неделю:</strong> $${weekMin.toFixed(2)} – $${weekMax.toFixed(2)}<br/>
+            Тебе: $${(weekMin * 0.8).toFixed(2)} – $${(weekMax * 0.8).toFixed(2)}</div><br/>
+          <div><strong>За месяц:</strong> $${monthMin.toFixed(2)} – $${monthMax.toFixed(2)}<br/>
+            Тебе: $${(monthMin * 0.8).toFixed(2)} – $${(monthMax * 0.8).toFixed(2)}</div>
+        `;
+      });
+    </script>
   </div>
-
-  <script>
-    const input = document.getElementById('amount');
-    const week = document.getElementById('result-week');
-    const month = document.getElementById('result-month');
-
-    input.addEventListener('input', () => {
-      const val = parseFloat(input.value);
-      if (isNaN(val) || val <= 0) {
-        week.textContent = '';
-        month.textContent = '';
-        return;
-      }
-
-      const weeklyProfit = val * 0.085;
-      const monthlyProfit = val * 0.35;
-
-      const teamWeekly = weeklyProfit * 0.2;
-      const teamMonthly = monthlyProfit * 0.2;
-
-      const userWeekly = weeklyProfit - teamWeekly;
-      const userMonthly = monthlyProfit - teamMonthly;
-
-      week.innerHTML = `<strong>За неделю:</strong> +8.5% = $${weeklyProfit.toFixed(2)}<br>
-        В команду: $${teamWeekly.toFixed(2)} | Тебе: $${userWeekly.toFixed(2)}`;
-      month.innerHTML = `<strong>За месяц:</strong> +35% = $${monthlyProfit.toFixed(2)}<br>
-        В команду: $${teamMonthly.toFixed(2)} | Тебе: $${userMonthly.toFixed(2)}`;
-    });
-  </script>
 </body>
 </html>
